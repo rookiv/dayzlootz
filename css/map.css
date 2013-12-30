@@ -75,8 +75,7 @@ ul {
 #lootinfo {
     position: relative;
     height: auto;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .russian {
