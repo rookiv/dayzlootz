@@ -23,7 +23,6 @@ $(function() {
 		noWrap : true,
 		crs : L.CRS.Simple
 	}).addTo(map);
-	map.setView([0, 0], 2);
 
 	var signs = listCities();
 
@@ -48,16 +47,18 @@ $(function() {
 		}
 
 	});
+
 });
 
 function clickMarker(e) {
 	$("#lootinfo").html(formatLoot(lootz[e.target.options.className]));
+	$(".subtitle").html("(" + e.target.options.className + ")");
 }
 
 function formatLoot(json) {
 	var display = "";
 	$.each(json, function(index, value) {
-		display += '<ul><span class="bold">' + index + "</span>";
+		display += '<ul><span class="bold">' + index.capitalize() + "</span>";
 
 		for (var i = 0; i < value.length; i++) {
 			display += "<li>" + value[i].name + ": " + value[i].loot + "%</li>";
@@ -116,7 +117,7 @@ function addMarker() {
 					fillOpacity : 0.5,
 					className : v[0],
 					zIndexOffset : 500
-				}).bindPopup(v[0]).on('click', clickMarker);
+				}).on('click', clickMarker);
 				markers.addLayer(source);
 			}
 		}
@@ -182,7 +183,7 @@ function buildCity(index, value) {
 		else
 			formatting = "village";
 	} else if (value.speech) {
-		display = value.speech[0].charAt(0).toUpperCase() + value.speech[0].slice(1);
+		display = value.speech[0].capitalize();
 		formatting = "local";
 	} else if (value.name != "") {
 		display = value.name;
@@ -216,4 +217,8 @@ Array.prototype.contains = function(obj) {
 		}
 	}
 	return false;
+};
+
+String.prototype.capitalize = function() {
+	return this.charAt(0).toUpperCase() + this.slice(1);
 };
