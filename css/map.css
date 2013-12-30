@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	height: 100vh;
+}
+
+#map {
+	background-color: lightgray;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 75%;
+	height: 100%;
+}
+
+.local, .village, .city {
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 80%;
+}
+
+.local {
+	font-size: 0.9em;
+}
+
+.village {
+	font-size: 1.2em;
+}
+
+.city {
+	font-size: 1.5em;
+}
+
+#sidebar {
+	width: 25%;
+	height: 100vh;
+	float: right;
+}
+
+#lootinfo {
+	height: 100vh;
+	overflow: auto;
+}
+
+.russian {
+	font-size: 90%;
+}
+
+.bold {
+	font-weight: bold;
+}
