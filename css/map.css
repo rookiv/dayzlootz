@@ -16,13 +16,20 @@ body {
     width: 100%;
 }
 
+.alpher {
+    display: block;
+    width: 700px;
+    padding-left: 150px;
+    color: #999;
+    line-height: 50px;
+}
+
 #map {
     position: fixed;
     background-color: #D3D3D3;
     margin-top: 50px;
     top: 0;
     bottom: 0;
-    width: 71%;
 }
 
 h1.title {
@@ -63,11 +70,6 @@ ul {
 
 .city {
     font-size: 1.5em;
-}
-
-#sidebar {
-    width: 29%;
-    float: right;
 }
 
 #lootinfo {

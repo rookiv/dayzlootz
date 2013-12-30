@@ -19,10 +19,12 @@ $(function() {
 	});
 
 	var rootLayer = L.tileLayer('tiles/{z}/{x}/{y}.png', {
-		attribution : 'Created by rukqoa',
+		attribution : 'Created by rukqoa.',
 		noWrap : true,
 		crs : L.CRS.Simple
 	}).addTo(map);
+
+	map.setZoom(2);
 
 	var signs = listCities();
 
